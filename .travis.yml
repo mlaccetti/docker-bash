@@ -9,8 +9,8 @@ install:
 
 before_script:
   - env | sort
-  - cd "${VERSION}-${VARIANT:+/$VARIANT}"
-  - image="mlaccetti:${VERSION}-${VARIANT:+-$VARIANT}"
+  - cd "${VERSION}-${VARIANT:+$VARIANT}"
+  - image="mlaccetti:${VERSION}${VARIANT:+-$VARIANT}"
 
 script:
   - travis_retry docker build -t "$image" .
