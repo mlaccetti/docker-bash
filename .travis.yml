@@ -1,6 +1,5 @@
 dist: trusty
 language: go
-go: '1.x'
 services: docker
 
 matrix:
@@ -29,3 +28,9 @@ script:
 
 after_script:
   - docker images
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+      docker push "mlaccetti:${VERSION}${VARIANT:+-$VARIANT}"
+    fi
