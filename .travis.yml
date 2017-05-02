@@ -20,7 +20,7 @@ install:
 before_script:
   - env | sort
   - cd "${VERSION}-${VARIANT:+$VARIANT}"
-  - image="mlaccetti:${VERSION}${VARIANT:+-$VARIANT}"
+  - image="mlaccetti/docker-bash:${VERSION}"
 
 script:
   - travis_retry docker build -t "$image" .
@@ -32,5 +32,5 @@ after_script:
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
       docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-      docker push "mlaccetti:${VERSION}${VARIANT:+-$VARIANT}";
+      docker push "mlaccetti/docker-bash:${VERSION}";
     fi
