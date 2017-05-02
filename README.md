@@ -1,6 +1,6 @@
 # About this Repo
 
-This is the Git repo for [docker-bash](https://registry.hub.docker.com/mlaccetti/docker-bash/).
+This is the Git repo for [docker-bash](https://registry.hub.docker.com/u/mlaccetti/docker-bash/).
 
 ---
 

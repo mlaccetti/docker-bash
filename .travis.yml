@@ -1,16 +1,17 @@
 dist: trusty
-language: bash
+language: go
+go: '1.x'
 services: docker
 
 matrix:
   include:
-  - bash: 4
+  - go: '1.x'
     env:
     - VERSION=17.03.0-ce VARIANT=bash
-  - bash: 4
+  - go: '1.x'
     env:
     - VERSION=17.03.1-ce VARIANT=bash
-  - bash: 4
+  - go: '1.x'
     env:
     - VERSION=17.04.0-ce VARIANT=bash
 
