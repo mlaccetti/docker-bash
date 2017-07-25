@@ -16,7 +16,9 @@ matrix:
   - go: '1.x'
     env:
     - VERSION=17.05.0-ce VARIANT=bash
-
+  - go: '1.x'
+    env:
+    - VERSION=17.06.0-ce VARIANT=bash
 install:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
 
